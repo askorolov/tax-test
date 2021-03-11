@@ -1,0 +1,147 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "LabGrotesque", sans-serif;
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+//Buttons
+
+button {
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+  &:focus {
+    outline: transparent;
+  }
+}
+
+.main-btn {
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  filter: drop-shadow(0px 0px 44px #cfdae7);
+  @media (min-width: 900px) {
+    &:focus,
+    &:hover {
+      outline: transparent;
+      background-color: #fff;
+      filter: none;
+      color: #000;
+    }
+  }
+}
+
+.main-btn--disabled {
+  border-color: #bec5cc;
+  color: #fff;
+}
+
+.action-btn {
+  transition: all 0.5s;
+  background: linear-gradient(255.35deg, #dc3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #ff5e56;
+  box-shadow: 0px 0px 24px rgba(234, 0, 41, 0.33);
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  @media (min-width: 900px) {
+    &:focus,
+    &:hover {
+      outline: transparent;
+      box-shadow: 0px 0px 24px rgba(234, 0, 41, 0.33);
+      background: linear-gradient(255.35deg, $accent 0.83%, $accent 108.93%), $accent;
+    }
+  }
+}
+
+.action-btn--disabled {
+  background: #bec5cc;
+}
+
+//Input
+
+.form__input {
+  transition: all 0.3s;
+  border: 1px solid #dfe3e6;
+  border-radius: 3px;
+  padding: 10px;
+  &::placeholder {
+    color: #bec5cc;
+  }
+  @media (min-width: 900px) {
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+}
+
+.form__input-error-mess {
+  color: $accent;
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 4px;
+}
+
+.form__input--error {
+  border-color: $accent;
+  &:hover {
+    border: 1px solid $accent;
+  }
+}

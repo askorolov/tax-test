@@ -1,0 +1,299 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #b3b3b3;
+  overflow: auto;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+  width: 552px;
+  left: 50%;
+  top: 13%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  background-color: #fff;
+  padding: 31px;
+}
+
+.modal__header {
+  margin-bottom: 23px;
+  text-align: left;
+}
+
+.modal__btn-close {
+  background: transparent;
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: fit-content;
+  text-align: center;
+  border: none;
+  font-size: 0px;
+  cursor: pointer;
+  &:focus {
+    transform: scale(1.2) rotate(90deg);
+  }
+}
+
+.modal__title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  margin-bottom: 16px;
+}
+
+.modal__descr {
+  color: #808080;
+  padding-right: 19px;
+}
+
+.form-row__title {
+  font-weight: 500;
+}
+
+.form {
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__salary {
+  margin-bottom: 8px;
+}
+
+.form__salary-label {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form__salary-input {
+  display: block;
+  width: 100%;
+  height: 38px;
+}
+
+.form__input-wrapper{
+    position: relative;
+    .currency{
+        position: absolute;
+        content: "";
+        left: 24px;
+        top: 50%;
+        transform: translateY(-64%);
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+    }
+}
+
+.form__row-count {
+  margin-bottom: 16px;
+}
+
+.form__btn-count {
+  border: none;
+  background-color: transparent;
+  color: $accent;
+  font-weight: 500;
+  &:hover {
+    color: $accent-hover;
+  }
+  &:active {
+    color: $accent;
+  }
+}
+
+.form__row-result {
+  margin-bottom: 19px;
+}
+
+.form__result-title {
+  margin-bottom: 2px;
+}
+
+.form__result-item {
+  padding: 16px 0px;
+  border-bottom: 1px solid #dfe3e6;
+  span {
+    color: #808080;
+  }
+}
+.form__result-item {
+  position: relative;
+  @media (min-width: 992px) {
+    &:hover {
+      .form__resul-label::before {
+        border-color: #000;
+      }
+    }
+  }
+}
+
+.form__resul-checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.form__resul-label {
+  cursor: pointer;
+  padding-left: 32px;
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1px solid #dfe3e6;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    z-index: 1;
+  }
+  &::after {
+    opacity: 0;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 16px;
+    left: 0;
+    border-radius: 6px;
+    z-index: 2;
+    background: center no-repeat #ff5e56;
+    background-image: url(../images/checkbox.svg),
+      linear-gradient(255.35deg, #dc3131 0.83%, rgba(255, 79, 79, 0) 108.93%);
+  }
+}
+
+.form__resul-checkbox:checked + .form__resul-label::after {
+  opacity: 1;
+}
+
+.form__row-decrease {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 32px;
+  }
+}
+
+.form__row-decrease {
+  margin-bottom: 40px;
+}
+
+.form__row-radio {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.form__row-radio-input {
+  display: none;
+}
+
+.form__row-radio-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 12px;
+  user-select: none;
+  background: #eef0f2;
+  border-radius: 50px;
+}
+
+.form__row-radio-input:checked + .form__row-radio-label {
+  color: #fff;
+  background: linear-gradient(255.35deg, #dc3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #ff5e56;
+}
+
+.form__btn-send {
+  transition: all 0.5s;
+  padding: 20px;
+  width: 100%;
+}
+
+//Адаптив
+
+@media (max-width: 850px) {
+  .modal__content {
+    width: 453px;
+    top: 11%;
+    padding: 33px;
+  }
+  .modal__descr {
+    padding-right: 0px;
+  }
+  .modal__btn-close {
+    top: 27px;
+    right: 23px;
+  }
+  .modal__header {
+    margin-bottom: 24px;
+  }
+  .form__row-count {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal__content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0px;
+    padding: 24px;
+  }
+  .modal__title {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+  .modal__btn-close {
+    top: 22px;
+    right: 33px;
+    width: 12px;
+    height: 12px;
+  }
+  .modal__descr {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .form__salary {
+    margin-bottom: 11px;
+  }
+  .form__result-title {
+    width: 70%;
+    margin-bottom: 0px;
+  }
+  .form__row-decrease {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form__row-result {
+    margin-bottom: 24px;
+  }
+  .form__row-decrease p {
+    margin-right: 0px;
+    margin-bottom: 23px;
+  }
+  .form__row-radio {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form__btn-send {
+    padding: 11px;
+  }
+}

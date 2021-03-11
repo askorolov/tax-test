@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание "Налоговый вычет"</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="first">
+            <button class="first__btn main-btn">Налоговый вычет</button>
+        </div>
+    </div>
+    <div class="modal hide">
+        <div class="modal__content">
+            <div class="modal__header">
+                <button class="modal__btn-close">
+                    <img src="images/btn-close.svg" alt="Кнопка закрытия окна">
+                </button>
+                <h3 class="modal__title">Налоговый вычет</h3>
+                <div class="modal__descr">
+                    Используйте налоговый вычет чтобы погасить ипотеку досрочно.
+                    Размер налогового
+                    вычета составляет не более 13% от своего официального годового дохода.
+                </div>
+            </div>
+
+            <form class="form" id="form1" name="form">
+                <div class='form__row form__salary'>
+                    <label class='form-row__title form__salary-label' for="form-salary">Ваша зарплата в
+                        месяц</label>
+                    <div class="form__input-wrapper">
+                        <span class="currency hide">₽</span>
+                        <input class="form__salary-input form__input" type="text" id="form-salary" name="form-salary"
+                            placeholder="Введите данные">
+                    </div>
+                    <div class="form__input-error-mess hide">
+                        Форма обязательна для заполнения
+                    </div>
+                </div>
+                <div class='form__row form__row-count'>
+                    <button class="form__btn-count">Рассчитать</button>
+                </div>
+                <div class='form__row form__row-result form__result hide'>
+                    <p class='form-row__title form__result-title'>Итого можно внести в качестве досрочных:</p>
+                    <div class="result-box">
+                        <!-- <ul class='form__result-list'>
+                            <li class='form__result-item'>
+                                <input class="form__resul-checkbox" type="checkbox" id="input-1" name="result-input-1">
+                                <label class="form__resul-label" for="input-1">78 000 рублей <span>в 1-й
+                                        год</span></label>
+                            </li>
+                            <li class='form__result-item'>
+                                <input class="form__resul-checkbox" type="checkbox" id="input-2" name="result-input-2"
+                                    >
+                                <label class="form__resul-label" for="input-2">78 000 рублей <span>во 2-ой
+                                        год</span></label>
+                            </li>
+                            <li class='form__result-item'>
+                                <input class="form__resul-checkbox" type="checkbox" id="input-3" name="result-input-3"
+                                    >
+                                <label class="form__resul-label" for="input-3">78 000 рублей <span>в 3-й
+                                        год</span></label>
+                            </li>
+                            <li class='form__result-item'>
+                                <input class="form__resul-checkbox" type="checkbox" id="input-4" name="result-input-4">
+                                <label class="form__resul-label" for="input-4">78 000 рублей <span>в 4-й
+                                        год</span></label>
+                            </li>
+                        </ul> -->
+                    </div>
+
+                </div>
+                <div class='form__row form__row-decrease'>
+                    <p class='form-row__title'>Что уменьшаем?</p>
+                    <div class="form__row-decrease-btn">
+                        <div class="form__row-radio">
+                            <input class="form__row-radio-input" type="radio" id="form-radio-money" name="radio"
+                                value="money" checked>
+                            <label class="form__row-radio-label" for="form-radio-money">Платеж</label>
+                        </div>
+                        <div class="form__row-radio">
+                            <input class="form__row-radio-input" type="radio" id="form-radio-days" name="radio"
+                                value="days">
+                            <label class="form__row-radio-label" for="form-radio-days">Срок</label>
+                        </div>
+                    </div>
+                </div>
+                <div class='form__row'>
+                    <button class="form__btn-send action-btn" type="submit">Добавить</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="js/lib.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
